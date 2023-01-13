@@ -66,4 +66,8 @@ class User extends Authenticatable
 
         return $this;
     }
+
+    // public function scopeMine($query){
+    //     return $query->where('id', Auth:id());
+    // }
 }

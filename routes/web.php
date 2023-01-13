@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
@@ -46,5 +46,6 @@ Route::controller(App\Http\Controllers\MainController::class)->group(function(){
     Route::post('/contact-store', 'contactSave')->name('contact.store');
 });
 Route::get('/profile', [UserController::class, 'index'])->name('user.index');
+Route::post('/profile', [UserController::class, 'update'])->name('user.update');
 // Route::get('/blogs/{id}',BlogController::class, 'getById')->name('byID');
 Route::resource('blogs', BlogController::class);

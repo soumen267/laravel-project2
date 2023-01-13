@@ -317,6 +317,12 @@ class MainController extends Controller
         return redirect()->back()->with('success', 'Saved');
     }
 
+    public function message(){
+        return [
+            "name.required" => "The name field cannot be empty"
+        ];
+    }
+
     public function ratingSave(Request $request)
     {
         if(Auth::user())
